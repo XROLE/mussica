@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicca/PlayerPage/index.dart';
 
 class Musicca extends StatelessWidget {
   const Musicca({Key? key}) : super(key: key);
@@ -24,11 +25,20 @@ class Musicca extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: SizedBox(height: 100)),
-                    Container(
-                      height: 300,
-                        child: Image.asset('assets/img/headphone.png', fit: BoxFit.contain,),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => PlayerPage()));
+                      },
+                      child: Container(
+                        height: 300,
+                        child: Image.asset(
+                          'assets/img/headphone.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
                     ),
-                     Expanded(child: SizedBox(height: 100)),
+                    Expanded(child: SizedBox(height: 100)),
                   ],
                 )),
             Expanded(
@@ -50,13 +60,12 @@ class Musicca extends StatelessWidget {
                               top: 20,
                               left: 120,
                               child: Container(
-                              height: 7,
-                              width: 7,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(48, 255, 253, 1),
-                                shape: BoxShape.circle
+                                height: 7,
+                                width: 7,
+                                decoration: BoxDecoration(
+                                    color: Color.fromRGBO(48, 255, 253, 1), shape: BoxShape.circle),
                               ),
-                            ),),
+                            ),
                           ],
                         ),
                         SizedBox(height: 15),
@@ -74,27 +83,21 @@ class Musicca extends StatelessWidget {
                               height: 5,
                               width: 5,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(48, 255, 253, 1),
-                                shape: BoxShape.circle
-                              ),
+                                  color: Color.fromRGBO(48, 255, 253, 1), shape: BoxShape.circle),
                             ),
                             SizedBox(width: 5),
                             Container(
                               height: 5,
                               width: 5,
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.5),
-                                shape: BoxShape.circle
-                              ),
+                                  color: Colors.white.withOpacity(0.5), shape: BoxShape.circle),
                             ),
                             SizedBox(width: 5),
                             Container(
                               height: 5,
                               width: 5,
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.5),
-                                shape: BoxShape.circle
-                              ),
+                                  color: Colors.white.withOpacity(0.5), shape: BoxShape.circle),
                             ),
                           ],
                         ),
